@@ -1,6 +1,42 @@
-# src
+# MLops project : Natural Language Processing 
+Lanaro Gabriel s233541  
+Marina Urriola Fernando A s233144  
+Saccardo Alessia s212246  
+Suarez Caballero Nerea s233132  
+Turetta Gabriele s233124  
 
-A short description of the project.
+
+## Overall goal of the project
+
+The final goal of the project is to use natural language processing (NLP) 
+to obtain a tranlaster from danish to english applying the [Transformer framework](https://huggingface.co/docs/transformers/index). 
+In order to do this we used [t5-samll model](https://huggingface.co/t5-small) using the 
+[Ted Talks dataset](https://huggingface.co/datasets/ted_talks_iwslt) from [Ted Conference Website](https://ted.com).
+
+## What framework are you going to use and you do you intend to include the framework into your project?
+Since the scope of the project is to translate from Danish to English, we are going to use Transformers framework. Transformers offers pre-built architectures for translation purposes, with a large variety of tools, and we can find it available in PyTorch.
+In order to include the framework into our project, we have selected a pre-trained model named T5, which is a text-to-text model that can translate multiple languages among many others tasks available. We will also train, test and validate the model with the selected data.
+
+
+## What data are you going to run on?
+
+To fine-tune the model, pairs of Danish-English sentences from The Web Inventory Talk, a collection of the original Ted talks and their translated version, were used. This extensive dataset contains translations in more than 109 languages. An entry in the dataset is in the form:
+
+```txt
+{
+  "translation": {
+    "da": "Vi har brug for en heltehistorie for døden.",
+    "en": "We need a heroic story for death."
+  }
+}
+```
+
+
+## What models do you expect to use?
+
+The T5 (Text-to-Text Transfer Transformer) model used in our project is a neural network architecture that serves as both an encoder and a decoder. T5 is renowned for transfer learning, being pre-trained on data-rich tasks and subsequently fine-tuned for specific tasks, such as translating between Danish and English in our case. Its versatility arises from the capability to frame every language problem as a conversion from textual input to textual output, allowing superior performance across a broad spectrum of tasks like summarization, question answering, and text classification. T5 models are available in various sizes, including t5-small, t5-base, t5-large, t5-3b, and t5-11b, catering to different computational needs and task complexities. For the purpose of our project, we opted for t5-small, which encompasses 60 million parameters.
+
+
 
 ## Project structure
 

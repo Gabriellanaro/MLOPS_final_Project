@@ -10,7 +10,7 @@ Turetta Gabriele s233124
 
 The final goal of the project is to use natural language processing (NLP) 
 to create a tranlastor from Danish to English applying the [Transformer framework](https://huggingface.co/docs/transformers/index). 
-In order to do this we used [t5-samll model](https://huggingface.co/t5-small) using the 
+In order to do this we used [t5-small model](https://huggingface.co/t5-small) using the 
 [Ted Talks dataset](https://huggingface.co/datasets/ted_talks_iwslt) from [Ted Conference Website](https://ted.com).
 
 ## What framework are you going to use and you do you intend to include the framework into your project?

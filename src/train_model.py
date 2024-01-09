@@ -62,6 +62,15 @@ if __name__ == "__main__":
 
     print(torch.cuda.is_available())
 
+# Set up the profiler using torch.profiler.profile
+with torch.profiler.profile(
+    activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
+    record_shapes=True,
+    with_stack=True,
+    on_trace_ready=torch.profiler.tensorboard_trace_handler(f"{OUT_DIR}/profiling_logs")
+) as prof:
+    print("Training...")
+    # Place your model training code here using Trainer or other methods
     trainer = Trainer(
         model=model,
         args=training_args,

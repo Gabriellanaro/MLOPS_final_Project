@@ -1,2 +1,1 @@
-from src.models.model import MyNeuralNet
-from src.predict_model import predict
+from src.models.model import model, tokenizer

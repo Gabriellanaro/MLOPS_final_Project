@@ -1,5 +1,5 @@
 import pickle
-from src.models.model import model, tokenizer
+from models.model import model, tokenizer
 import os
 from transformers import (
     T5Tokenizer,

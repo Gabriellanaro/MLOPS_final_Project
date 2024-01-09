@@ -8,6 +8,6 @@ hp:
   weight_decay : 0.01
   evaluation_strategy: 'steps'
   learning_rate: 0.0001
-  dataloader_num_workers: 4
+  dataloader_num_workers: 2
 
 

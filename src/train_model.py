@@ -11,12 +11,13 @@ import torch
 from datetime import datetime
 from torch.utils.tensorboard import SummaryWriter
 from omegaconf import OmegaConf
-# loading
-config = OmegaConf.load('config.yaml')
+import hydra
+
 
 # writer = SummaryWriter() #  I THINK LATER WE WILL USE WEIGHTS AND BIASES SO LATER WE WILL NEED TO REMOVE TENSORBOARD
 
-if __name__ == "__main__":
+@hydra.main(config_name="../config.yaml")
+def main(config):
     print("Load data...")
     print(f'Current working directory: {os.getcwd()}')
     with open(f"{os.getcwd()}/data/processed/tokenized_train.pkl", 'rb') as f:
@@ -86,3 +87,5 @@ if __name__ == "__main__":
     # # Wait for the command to finish
     # process.wait()
 
+if __name__ == "__main__":
+    main()

@@ -1,23 +1,33 @@
-import pytest
+import unittest
 import torch
-from datasets import Dataset
-import sys
-sys.path.insert(0, 'C:/Users/Usuario/dtu/mlopsproj/MLOPS_final_Project/src')
+import pytest
+from src.models.model import model, tokenizer
 
-from models.train_model import train_model
+class TestModelTranslation(unittest.TestCase):
+  @pytest.mark.filterwarnings("ignore:`as_target_tokenizer` is deprecated and will be removed in v5 of Transformers")
+  def setUp(self):
+      self.model = model
+      self.tokenizer = tokenizer
+      self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+      self.model.to(self.device)
 
-def test_train_model():
-    # Load a dataset
-    dataset = Dataset.from_dict({'text': ['Lisa Kristine: Billeder der bærer vidne til moderne slaveri.']})
+  @pytest.mark.filterwarnings("ignore:`as_target_tokenizer` is deprecated and will be removed in v5 of Transformers")
+  def test_single_sentence(self):
+      # Define a Danish sentence
+      danish_sentence = "Hej, jeg er lige ankommet."
 
-    # Train a model
-    model = train_model(dataset)
+      # Tokenize the sentence
+      inputs = self.tokenizer.encode_plus(danish_sentence, return_tensors='pt', padding=True, truncation=True)
 
-    # Check if the model is trained
-    # This could be done by checking if the model's parameters have changed after training,
-    # or by checking if the model can make predictions without raising an exception.
-    try:
-        model(dataset['text'])
-        print("Test correctly passed :)")
-    except Exception as e:
-        pytest.fail(f"Model prediction raised an exception: {e}")
+      # Move the inputs to the GPU if available
+      inputs = {name: tensor.to(self.device) for name, tensor in inputs.items()}
+
+      # Generate the translation
+      outputs = self.model.generate(inputs['input_ids'], max_length=100, num_beams=5, early_stopping=True)
+
+      # No exceptions should be raised till here, so the test is considered passed
+      self.assertIsNotNone(outputs)
+
+if __name__ == '__main__':
+  unittest.main()
+

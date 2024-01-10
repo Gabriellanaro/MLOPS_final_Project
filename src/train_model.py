@@ -16,13 +16,21 @@ import hydra
 
 # writer = SummaryWriter() #  I THINK LATER WE WILL USE WEIGHTS AND BIASES SO LATER WE WILL NEED TO REMOVE TENSORBOARD
 
-@hydra.main(config_name="../config.yaml")
+@hydra.main(config_name="config.yaml", config_path = "../")
 def main(config):
     print("Load data...")
     print(f'Current working directory: {os.getcwd()}')
-    with open(f"{os.getcwd()}/data/processed/tokenized_train.pkl", 'rb') as f:
+
+    # Get the absolute paths using hydra.utils.to_absolute_path
+    train_data_path = hydra.utils.to_absolute_path(config.data.train_data)
+    test_data_path = hydra.utils.to_absolute_path(config.data.test_data)
+
+    print(f"train data path = {train_data_path}")
+    print(f"test data path = {test_data_path}")
+
+    with open(train_data_path, 'rb') as f:
         tokenized_train = pickle.load(f)
-    with open(f"{os.getcwd()}/data/processed/tokenized_test.pkl", 'rb') as f:
+    with open(test_data_path, 'rb') as f:
         tokenized_test = pickle.load(f)
 
     print("Set parameters...")

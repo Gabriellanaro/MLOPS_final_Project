@@ -54,17 +54,17 @@ end of the project.
 * [X] Make sure that all team members have write access to the GitHub repository
 * [X] Create a dedicated environment for your project to keep track of your packages
 * [X] Create the initial file structure using cookiecutter
-* [X] Fill out the `make_dataset.py` file such that it downloads whatever data you need and
-* [X] Add a model file and a training script and get that running
-* [X] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
+* [ ] Fill out the `make_dataset.py` file such that it downloads whatever data you need and
+* [ ] Add a model file and a training script and get that running
+* [ ] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
 * [ ] Remember to comply with good coding practices (`pep8`) while doing the project
 * [ ] Do a bit of code typing and remember to document essential parts of your code
 * [X] Setup version control for your data or part of your data
-* [X] Construct one or multiple docker files for your code
-* [X] Build the docker files locally and make sure they work as intended
-* [X] Write one or multiple configuration files for your experiments
+* [ ] Construct one or multiple docker files for your code
+* [ ] Build the docker files locally and make sure they work as intended
+* [ ] Write one or multiple configuration files for your experiments
 * [ ] Used Hydra to load the configurations and manage your hyperparameters
-* [X] When you have something that works somewhat, remember at some point to do some profiling and see if
+* [ ] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code
 * [ ] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.
@@ -72,8 +72,8 @@ end of the project.
 
 ### Week 2
 
-* [ ] Write unit tests related to the data part of your code
-* [ ] Write unit tests related to model construction and or model training
+* [X] Write unit tests related to the data part of your code
+* [X] Write unit tests related to model construction and or model training
 * [ ] Calculate the coverage.
 * [ ] Get some continuous integration running on the github repository
 * [ ] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
@@ -148,7 +148,13 @@ end of the project.
 >
 > Answer:
 
---- question 4 fill here ---
+--- We used conda for managing our dependencies. The list of dependencies could be found in the `requirements.txt` file. This allow the user to get a complete copy of our environment. One would 
+have to run the following commands:
+1. `git clone https://github.com/Gabriellanaro/MLOPS_final_Project`
+2. Navigate to project directory 
+3. Create a virtual environment: `conda create --name <nameOfTheEnv>`
+4. Activate the virtual environment: `conda activate <nameOfTheEnv>`
+5. Run: `pip install -r requirements.txt`    ---
 
 ### Question 5
 
@@ -174,7 +180,7 @@ end of the project.
 >
 > Answer:
 
---- question 6 fill here ---
+--- In larger projects, maintaining code quality and consistent formatting is crucial. It allows for better collaboration as developers can easily understand and follow the code written by others. It also helps in catching potential errors early, reducing the time spent on debugging and increasing the overall efficiency of the development process.---
 
 ## Version control
 
@@ -188,8 +194,8 @@ end of the project.
 > Answer length: 50-100 words.
 >
 > Example:
-> *In total we have implemented X tests. Primarily we are testing ... and ... as these the most critical parts of our*
-> *application but also ... .*
+> *In total we have implemented 2 tests. Primarily we are testing the `make_dataset.py` fila, in this we wanted to test if the `preprocess()` function works correctly. As well, in the second test we basically test our trained model (`train_model.py`).*
+>
 >
 > Answer:
 
@@ -223,7 +229,9 @@ end of the project.
 >
 > Answer:
 
---- question 9 fill here ---
+--- In our project, we effectively utilized a common Git workflow that involves branches and Pull Requests (PRs). Each team member was assigned their own branch, separate from the main branch. This approach allowed us to work independently without affecting the main codebase. When a team member completed a feature or a piece of work, they created a Pull Request.  It provided an opportunity for the rest of the team to review the changes, suggest modifications, and eventually approve the changes.
+
+Once the Pull Request was approved, the changes were merged into the main branch. This workflow ensured that all changes were reviewed and tested before they were incorporated into the main codebase, which helped us maintain code quality and prevent bugs.  ---
 
 ### Question 10
 
@@ -238,7 +246,7 @@ end of the project.
 >
 > Answer:
 
---- question 10 fill here ---
+--- We indeed used DVC for managing and versioning our data. DVC greatly improved our project by providing a systematic way to version control our datasets and machine learning models, similar to how Git versions code. We could easily roll back to a previous version of a dataset or model, ensuring we could reproduce earlier stages of our work if needed.This was especially beneficial in a collaborative environment, as it ensured consistency and reproducibility across different stages of the project, regardless of who was working on it or when they were working on it. ---
 
 ### Question 11
 
@@ -273,7 +281,12 @@ end of the project.
 >
 > Answer:
 
---- question 12 fill here ---
+--- In our project, we configured experiments dynamically changing and adding hyperparameters on the fly from the command line. 
+
+Example: 
+`python train_model.py hp.batch_size=16 hp.epochs=4`
+
+The results of the experiments are written by default in the directory`outputs` ---
 
 ### Question 13
 

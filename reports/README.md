@@ -169,7 +169,12 @@ have to run the following commands:
 > *experiments.*
 > Answer:
 
---- question 5 fill here ---
+--- Within our project's cookiecutter template, several folders cater to specific functionalities:
+1. Src folder: This directory encompasses data, models, and visualization subfolders. We've exclusively engaged the data subfolder for data retrieval scripts, and the models subfolder houses implementations for modeling, training, and prediction scripts.
+2. Test folder: This section houses scripts dedicated to executing tests, ensuring robustness and accuracy.
+3. Reports: This directory contains the outcomes of analyses in HTML format, alongside figures and graphics generated during the project's exploration and analysis phase.
+4. Docker: Essential for Docker-related files and configurations, this folder is integral for deployment and containerization.
+However, the notebooks folder, designated for Jupyter Notebook usage, and the docs folder, designated for documentation purposes, are unnecessary for our current project objectives. Removing these folders streamlines our project structure without impacting functionality. ---
 
 ### Question 6
 
@@ -229,7 +234,7 @@ have to run the following commands:
 >
 > Answer:
 
---- In our project, we effectively utilized a common Git workflow that involves branches and Pull Requests (PRs). Each team member was assigned their own branch, separate from the main branch. This approach allowed us to work independently without affecting the main codebase. When a team member completed a feature or a piece of work, they created a Pull Request.  It provided an opportunity for the rest of the team to review the changes, suggest modifications, and eventually approve the changes.
+--- In our project, we effectively used a common Git workflow that involves branches and Pull Requests (PRs). Each team member was assigned their own branch, separate from the main branch. This approach allowed us to work independently without affecting the main codebase. When a team member completed a feature or a piece of work, they created a Pull Request.  It provided an opportunity for the rest of the team to review the changes, suggest modifications, and eventually approve the changes.
 
 Once the Pull Request was approved, the changes were merged into the main branch. This workflow ensured that all changes were reviewed and tested before they were incorporated into the main codebase, which helped us maintain code quality and prevent bugs.  ---
 

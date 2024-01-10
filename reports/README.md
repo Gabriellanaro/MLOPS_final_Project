@@ -60,9 +60,9 @@ end of the project.
 * [ ] Remember to comply with good coding practices (`pep8`) while doing the project
 * [ ] Do a bit of code typing and remember to document essential parts of your code
 * [X] Setup version control for your data or part of your data
-* [ ] Construct one or multiple docker files for your code
-* [ ] Build the docker files locally and make sure they work as intended
-* [ ] Write one or multiple configuration files for your experiments
+* [X] Construct one or multiple docker files for your code
+* [X] Build the docker files locally and make sure they work as intended
+* [X] Write one or multiple configuration files for your experiments
 * [ ] Used Hydra to load the configurations and manage your hyperparameters
 * [X] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code

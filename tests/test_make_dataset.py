@@ -25,3 +25,5 @@ def test_preprocess_function():
     # Check if the results match
     assert tokenized_train == saved_tokenized_train
     assert tokenized_test == saved_tokenized_test
+
+    print("Test passed :)")

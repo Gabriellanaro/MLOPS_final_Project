@@ -1,9 +1,17 @@
 import pickle
 from datasets import Dataset
 import sys
-from tests import _PATH_DATA
+# from tests import _PATH_DATA
 import pandas as pd
+import os
+
+project_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(project_path, ".."))
 from src.data.make_dataset import preprocess_function
+
+_TEST_ROOT = os.path.dirname(__file__)  # root of test folder
+_PROJECT_ROOT = os.path.dirname(_TEST_ROOT)  # root of project
+_PATH_DATA = os.path.join(_PROJECT_ROOT, "Data")  # root of data
 
 def test_preprocess_function():
     # Load the datasets

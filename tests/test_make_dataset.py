@@ -18,7 +18,6 @@ def test_preprocess_function():
     # Load the datasets
     print(f"Current working directory: {os.getcwd()}")
     print(f"Full path to Data folder: {_PATH_DATA}")
-    print(f"Contents of {_PATH_DATA}/raw/: {os.listdir(os.path.join(_PATH_DATA, 'raw'))}")
     with open(f'{_PATH_DATA}/raw/train_set.pkl', 'rb') as f:
         train_set = pickle.load(f)
     with open(f'{_PATH_DATA}/raw/test_set.pkl', 'rb') as f:

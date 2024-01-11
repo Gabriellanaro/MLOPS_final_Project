@@ -11,13 +11,14 @@ from src.data.make_dataset import preprocess_function
 
 _TEST_ROOT = os.path.dirname(__file__)  # root of test folder
 _PROJECT_ROOT = os.path.dirname(_TEST_ROOT)  # root of project
-_PATH_DATA = os.path.join(_PROJECT_ROOT, "Data")  # root of data
+_PATH_DATA = os.path.join(_PROJECT_ROOT, "data")  # root of data
 print(_PATH_DATA)
 
 def test_preprocess_function():
     # Load the datasets
     print(f"Current working directory: {os.getcwd()}")
     print(f"Full path to Data folder: {_PATH_DATA}")
+    print(f"Contents of {_PATH_DATA}/raw/: {os.listdir(os.path.join(_PATH_DATA, 'raw'))}")
     with open(f'{_PATH_DATA}/raw/train_set.pkl', 'rb') as f:
         train_set = pickle.load(f)
     with open(f'{_PATH_DATA}/raw/test_set.pkl', 'rb') as f:

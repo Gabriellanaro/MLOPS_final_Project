@@ -1,6 +1,53 @@
 outs:
-- md5: 8252a4ade52389357a47d9a44f6ecc71.dir
-  size: 10664734
-  nfiles: 7
-  hash: md5
+- hash: md5
   path: data
+  files:
+  - relpath: processed/.gitkeep
+    md5: d41d8cd98f00b204e9800998ecf8427e
+    size: 0
+    cloud:
+      remote_storage:
+        etag: 08a0e49cbdeed283031001
+        version_id: '1704891154641440'
+  - relpath: processed/tokenized_test.pkl
+    md5: 9d59cd313d39ab2abcc7d54d4a86cd77
+    size: 2035790
+    cloud:
+      remote_storage:
+        etag: 08bccff6bdeed283031001
+        version_id: '1704891156113340'
+  - relpath: processed/tokenized_train.pkl
+    md5: bb7565f2b607dca7e4b0200c40b08f79
+    size: 8118786
+    cloud:
+      remote_storage:
+        etag: 08ecf38ac0eed283031001
+        version_id: '1704891160639980'
+  - relpath: raw/.gitkeep
+    md5: d41d8cd98f00b204e9800998ecf8427e
+    size: 0
+    cloud:
+      remote_storage:
+        etag: 0895deb7bdeed283031001
+        version_id: '1704891155083029'
+  - relpath: raw/data.pkl
+    md5: 054f9eb61cbc9880e001a0e8d429f139
+    size: 255071
+    cloud:
+      remote_storage:
+        etag: 08f286d8bdeed283031001
+        version_id: '1704891155612530'
+  - relpath: raw/test_set.pkl
+    md5: 26b012de5a44a3f74465f00db6889735
+    size: 50747
+    cloud:
+      remote_storage:
+        etag: 08f7a9c8bdeed283031001
+        version_id: '1704891155354871'
+  - relpath: raw/train_set.pkl
+    md5: 5a682095ca0430901a12d9134062c9b7
+    size: 204340
+    cloud:
+      remote_storage:
+        etag: 08d5f1dcbdeed283031001
+        version_id: '1704891155691733'

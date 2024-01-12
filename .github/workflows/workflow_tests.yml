@@ -2,9 +2,9 @@ name: "T5-tests"
 
 on:
   push:
-    branches: [unit_test]
+    branches: [main]
   pull_request:
-    branches: [unit_test]
+    branches: [main]
 
 jobs:
   build:

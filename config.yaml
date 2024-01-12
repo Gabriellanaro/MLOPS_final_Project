@@ -1,7 +1,7 @@
 hp: 
   batch_size: 16
   num_procs: 16
-  epochs: 15
+  epochs: 2
   max_length: 256
   #output_dir: models
   warmup_steps : 500

@@ -1,0 +1,13 @@
+hp:
+  batch_size: 16
+  num_procs: 16
+  epochs: 2
+  max_length: 256
+  warmup_steps: 500
+  weight_decay: 0.01
+  evaluation_strategy: steps
+  learning_rate: 0.0001
+  dataloader_num_workers: 2
+data:
+  train_data: data/processed/tokenized_train.pkl
+  test_data: data/processed/tokenized_test.pkl

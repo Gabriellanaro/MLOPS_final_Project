@@ -12,6 +12,9 @@ from datetime import datetime
 from torch.utils.tensorboard import SummaryWriter
 from omegaconf import OmegaConf
 import hydra
+import wandb
+
+wandb.init(project="my-cloud-project", name="exp-hydra-cloud")
 
 
 # writer = SummaryWriter() #  I THINK LATER WE WILL USE WEIGHTS AND BIASES SO LATER WE WILL NEED TO REMOVE TENSORBOARD
@@ -74,16 +77,27 @@ def main(config):
 
     print(torch.cuda.is_available())
 
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=tokenized_train,
-        eval_dataset=tokenized_test,
-    )
+    # Set up the profiler using torch.profiler.profile
+    with torch.profiler.profile(
+        activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
+        record_shapes=True,
+        with_stack=True,
+        on_trace_ready=torch.profiler.tensorboard_trace_handler(f"{OUT_DIR}/profiling_logs")
+    ) as prof:
+        print("Training...")
+        # Place your model training code here using Trainer or other methods
+        trainer = Trainer(
+            model=model,
+            args=training_args,
+            train_dataset=tokenized_train,
+            eval_dataset=tokenized_test)
 
     trainer.train()
     tokenizer.save_pretrained(f"{OUT_DIR}/{timestamp_str}")
-    
+
+    wandb.save("model_cloud_1")
+    wandb.finish()
+
     # import subprocess
 
     # # Define the command

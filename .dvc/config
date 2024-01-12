@@ -1,5 +1,7 @@
 [core]
     remote = remote_storage
+[cache]
+    dir = cache
 ['remote "myremote"']
     url = gdrive://1CMQleAnTfMCOt0cpvcHY62mDYiisaEih
 ['remote "remote_storage"']

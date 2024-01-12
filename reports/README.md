@@ -63,8 +63,8 @@ end of the project.
 * [X] Construct one or multiple docker files for your code
 * [X] Build the docker files locally and make sure they work as intended
 * [X] Write one or multiple configuration files for your experiments
-* [ ] Used Hydra to load the configurations and manage your hyperparameters
-* [X] When you have something that works somewhat, remember at some point to do some profiling and see if
+* [X] Used Hydra to load the configurations and manage your hyperparameters
+* [ ] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code
 * [ ] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.
@@ -72,11 +72,11 @@ end of the project.
 
 ### Week 2
 
-* [ ] Write unit tests related to the data part of your code
-* [ ] Write unit tests related to model construction and or model training
+* [X] Write unit tests related to the data part of your code
+* [X] Write unit tests related to model construction and or model training
 * [ ] Calculate the coverage.
 * [ ] Get some continuous integration running on the github repository
-* [ ] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
+* [X] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
 * [ ] Create a trigger workflow for automatically building your docker images
 * [ ] Get your model training in GCP using either the Engine or Vertex AI
 * [ ] Create a FastAPI application that can do inference using your model
@@ -148,7 +148,13 @@ end of the project.
 >
 > Answer:
 
---- question 4 fill here ---
+--- We used conda for managing our dependencies. The list of dependencies could be found in the `requirements.txt` file. This allow the user to get a complete copy of our environment. One would 
+have to run the following commands:
+1. `git clone https://github.com/Gabriellanaro/MLOPS_final_Project`
+2. Navigate to project directory 
+3. Create a virtual environment: `conda create --name <nameOfTheEnv>`
+4. Activate the virtual environment: `conda activate <nameOfTheEnv>`
+5. Run: `pip install -r requirements.txt`    ---
 
 ### Question 5
 
@@ -163,7 +169,12 @@ end of the project.
 > *experiments.*
 > Answer:
 
---- question 5 fill here ---
+--- Within our project's cookiecutter template, several folders cater to specific functionalities:
+1. Src folder: This directory encompasses data, models, and visualization subfolders. We've exclusively engaged the data subfolder for data retrieval scripts, and the models subfolder houses implementations for modeling, training, and prediction scripts.
+2. Test folder: This section houses scripts dedicated to executing tests, ensuring robustness and accuracy.
+3. Reports: This directory contains the outcomes of analyses in HTML format, alongside figures and graphics generated during the project's exploration and analysis phase.
+4. Docker: Essential for Docker-related files and configurations, this folder is integral for deployment and containerization.
+However, the notebooks folder, designated for Jupyter Notebook usage, and the docs folder, designated for documentation purposes, are unnecessary for our current project objectives. Removing these folders streamlines our project structure without impacting functionality. ---
 
 ### Question 6
 
@@ -174,7 +185,7 @@ end of the project.
 >
 > Answer:
 
---- question 6 fill here ---
+--- In larger projects, maintaining code quality and consistent formatting is crucial. It allows for better collaboration as developers can easily understand and follow the code written by others. It also helps in catching potential errors early, reducing the time spent on debugging and increasing the overall efficiency of the development process.---
 
 ## Version control
 
@@ -188,8 +199,8 @@ end of the project.
 > Answer length: 50-100 words.
 >
 > Example:
-> *In total we have implemented X tests. Primarily we are testing ... and ... as these the most critical parts of our*
-> *application but also ... .*
+> *In total we have implemented 2 tests. Primarily we are testing the `make_dataset.py` fila, in this we wanted to test if the `preprocess()` function works correctly. As well, in the second test we basically test our trained model (`train_model.py`).*
+>
 >
 > Answer:
 
@@ -223,7 +234,9 @@ end of the project.
 >
 > Answer:
 
---- question 9 fill here ---
+--- In our project, we effectively used a common Git workflow that involves branches and Pull Requests (PRs). Each team member was assigned their own branch, separate from the main branch. This approach allowed us to work independently without affecting the main codebase. When a team member completed a feature or a piece of work, they created a Pull Request.  It provided an opportunity for the rest of the team to review the changes, suggest modifications, and eventually approve the changes.
+
+Once the Pull Request was approved, the changes were merged into the main branch. This workflow ensured that all changes were reviewed and tested before they were incorporated into the main codebase, which helped us maintain code quality and prevent bugs.  ---
 
 ### Question 10
 
@@ -238,7 +251,7 @@ end of the project.
 >
 > Answer:
 
---- question 10 fill here ---
+--- We indeed used DVC for managing and versioning our data. DVC greatly improved our project by providing a systematic way to version control our datasets and machine learning models, similar to how Git versions code. We could easily roll back to a previous version of a dataset or model, ensuring we could reproduce earlier stages of our work if needed.This was especially beneficial in a collaborative environment, as it ensured consistency and reproducibility across different stages of the project, regardless of who was working on it or when they were working on it. ---
 
 ### Question 11
 
@@ -273,7 +286,12 @@ end of the project.
 >
 > Answer:
 
---- question 12 fill here ---
+--- In our project, we configured experiments dynamically changing and adding hyperparameters on the fly from the command line. 
+
+Example: 
+`python train_model.py hp.batch_size=16 hp.epochs=4`
+
+The results of the experiments are written by default in the directory`outputs` ---
 
 ### Question 13
 

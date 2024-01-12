@@ -1,0 +1,120 @@
+{
+    "os": "Linux-5.10.0-26-cloud-amd64-x86_64-with-glibc2.31",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-01-12T13:39:55.697513",
+    "startedAt": "2024-01-12T13:39:54.886016",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/gabriel_lanaro11/MLOPS_final_Project/src/train_model.py",
+    "codePathLocal": "src/train_model.py",
+    "codePath": "src/train_model.py",
+    "git": {
+        "remote": "https://Gabriellanaro:@github.com/Gabriellanaro/MLOPS_final_Project.git",
+        "commit": "fea27da43cc614670bc84b55848df9554c1b318c"
+    },
+    "email": "gabriel.lanaro11@gmail.com",
+    "root": "/home/gabriel_lanaro11/MLOPS_final_Project",
+    "host": "gpu-inst",
+    "username": "gabriel_lanaro11",
+    "executable": "/opt/conda/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2200.1559999999995,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2200.156,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 48.97825241088867,
+            "used": 38.809837341308594
+        }
+    },
+    "memory": {
+        "total": 102.184814453125
+    }
+}

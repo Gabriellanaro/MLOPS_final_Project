@@ -26,11 +26,13 @@ jobs:
     - name: Install DVC
       run: |
         pip install dvc
-        pip install dvc_gdrive
-
-    - name: Configure DVC and restore data
-      run: |
-        dvc pull  # Ripristina i dati gestiti da DVC
+        pip install
+    
+    - uses: iterative/setup-dvc@v1
+    - name: Get data
+      run: dvc pull
+      env:
+        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
     - name: Test with pytest
       run: |

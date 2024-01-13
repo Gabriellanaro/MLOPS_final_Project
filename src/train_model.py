@@ -93,8 +93,8 @@ def main(config):
             eval_dataset=tokenized_test)
 
     trainer.train()
-    tokenizer.save_model(f"{OUT_DIR}/{timestamp_str}/tokenizer")
-    model.save_model(f"{OUT_DIR}/{timestamp_str}/model")
+    # tokenizer.save_pretrained(f"{OUT_DIR}/{timestamp_str}/tokenizer")
+    trainer.save_model(f"{OUT_DIR}/{timestamp_str}/model")
 
     wandb.save("model_cloud_1")
     wandb.finish()

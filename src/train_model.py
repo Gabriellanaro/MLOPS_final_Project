@@ -48,7 +48,7 @@ def main(config):
     # Get the current timestamp
     timestamp = datetime.now()
     # Convert the timestamp to a string
-    timestamp_str = timestamp.strftime("%Y_%m_%d_%H_%M_%S")
+    timestamp_str = timestamp.strftime("%Y_%m_%d_%H_%M")
     OUT_DIR = f"{os.getcwd()}/models"   ## However, please note that this path will be relative. If you want to use it in subsequent file operations, you might need to convert it to an absolute path using os.path.abspath(OUT_DIR)
 
     

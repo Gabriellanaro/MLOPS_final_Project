@@ -5,6 +5,7 @@ import glob
 from datetime import datetime
 from fastapi import FastAPI
 from pydantic import BaseModel
+from http import HTTPStatus
 
 # TO FIX TO BE SURE THAT THE PATH OF TTHE DIRECTORY IS CORRECT AND THE NAME OF THE CHECKPOINT IS ALWAYS checkpoint-500
 

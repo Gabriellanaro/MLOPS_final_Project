@@ -4,11 +4,10 @@ import os
 import glob
 from datetime import datetime
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 # TO FIX TO BE SURE THAT THE PATH OF TTHE DIRECTORY IS CORRECT AND THE NAME OF THE CHECKPOINT IS ALWAYS checkpoint-500
 
-app = FastAPI()
-@app.post("/translate")
 def predict(input_str: str):
     # Look from the most recent train to load the model
     OUT_DIR = f"{os.getcwd()}/models"
@@ -31,3 +30,25 @@ def predict(input_str: str):
     translated_text = tokenizer.decode(output[0])
 
     return {"translated_text": translated_text}
+
+
+
+
+app = FastAPI()
+
+"""@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int):
+    return {"item_id": item_id}"""
+
+
+class Sentence(BaseModel):
+    text: str
+
+@app.post("/translate/")
+async def read_sentence(sentence: Sentence):
+    prediction = predict(sentence.text)
+    return {"sentence": sentence.text, "prediction": prediction}

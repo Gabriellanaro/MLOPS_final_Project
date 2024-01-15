@@ -1,5 +1,5 @@
 [core]
-    remote = remote_storage
+    remote = gcs://mlops_final_proj_bucket
 [cache]
     dir = cache
 ['remote "myremote"']

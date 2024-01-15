@@ -66,7 +66,7 @@ end of the project.
 * [X] Used Hydra to load the configurations and manage your hyperparameters
 * [ ] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code
-* [ ] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
+* [X] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.
 * [ ] Use Pytorch-lightning (if applicable) to reduce the amount of boilerplate in your code
 
@@ -323,7 +323,7 @@ The results of the experiments are written by default in the directory`outputs` 
 >
 > Answer:
 
---- question 14 fill here ---
+--- Our code sets up a hyperparameter sweep using the Weights & Biases (W&B) library to optimize the training process of t5-small. As it can be seen in [this figure](figures/figuresGroup9/chartsWandb.jpg) and in [this figure](figures/figuresGroup9/chart2Wandb.jpg) we have made different experiments changing the `learning_rate, batch_size and weight_decay`. As well, [this figure](figures/figuresGroup9/chart3Wandb.jpg) shows which of the parameters has more impact on the model. In summary, this code automates the hyperparameter tuning process, leveraging W&B for experiment tracking and optimization, and utilizes the Trainer class for training a transformer-based model with varying hyperparameter configurations.---
 
 ### Question 15
 

@@ -95,6 +95,7 @@ def main(config):
     trainer.train()
     # tokenizer.save_pretrained(f"{OUT_DIR}/{timestamp_str}/tokenizer")
     trainer.save_model(f"{OUT_DIR}/{timestamp_str}/model")
+    torch.save(model.state_dict(), f"{OUT_DIR}/{timestamp_str}/model/checkpoint.pth")
 
     wandb.save("model_cloud_1")
     wandb.finish()

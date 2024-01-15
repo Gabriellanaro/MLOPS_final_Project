@@ -52,8 +52,8 @@ def main(config):
     OUT_DIR = f"{os.getcwd()}/models"   ## However, please note that this path will be relative. If you want to use it in subsequent file operations, you might need to convert it to an absolute path using os.path.abspath(OUT_DIR)
 
     
-    os.makedirs(f'{OUT_DIR}/{timestamp_str}', exist_ok=True)
-    print(f"Results will be saved in {OUT_DIR}/{timestamp_str}")
+    os.makedirs(f'{OUT_DIR}', exist_ok=True)
+    print(f"Results will be saved in {OUT_DIR}")
     print("Training...")
     training_args = TrainingArguments(
         output_dir=OUT_DIR,
@@ -94,8 +94,8 @@ def main(config):
 
     trainer.train()
     # tokenizer.save_pretrained(f"{OUT_DIR}/{timestamp_str}/tokenizer")
-    trainer.save_model(f"{OUT_DIR}/{timestamp_str}/model")
-    torch.save(model.state_dict(), f"{OUT_DIR}/{timestamp_str}/model/checkpoint.pth")
+    trainer.save_model(f"{OUT_DIR}/model")
+    torch.save(model.state_dict(), f"{OUT_DIR}/model/checkpoint.pth")
 
     wandb.save("model_cloud_1")
     wandb.finish()

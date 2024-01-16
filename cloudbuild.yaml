@@ -1,9 +1,11 @@
 steps:
+  - name: 'gcr.io/cloud-builders/git'
+    entrypoint: 'bash'
+    args: ['-c', 'git clone https://github.com/Gabriellanaro/MLOPS_final_Project.git && cd MLOPS_final_Project && dvc pull']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/vernal-aleph-410709/trainer', '-f', './dockerfiles/trainer.dockerfile', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/vernal-aleph-410709/trainer']
-    
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/vernal-aleph-410709/predictor', '-f', './dockerfiles/predictor.dockerfile', '.']
   - name: 'gcr.io/cloud-builders/docker'

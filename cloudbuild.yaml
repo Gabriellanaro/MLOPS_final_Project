@@ -1,0 +1,5 @@
+steps:
+    - name: 'gcr.io/cloud-builders/docker'
+        args: ['build', '-t', 'gcr.io/vernal-aleph-410709/predictor', '.']
+    - name: 'gcr.io/cloud-builders/docker'
+        args: ['push', 'gcr.io/vernal-aleph-410709/predictor']

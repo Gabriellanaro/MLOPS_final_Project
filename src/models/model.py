@@ -9,18 +9,16 @@ from transformers import (
 
 MODEL = 't5-small'
 tokenizer = T5Tokenizer.from_pretrained(MODEL)
-model = T5ForConditionalGeneration.from_pretrained(MODEL)
+model = T5ForConditionalGeneration.from_pretrained(MODEL,return_dict=True)
 
-# tokenizer_path = "./MLOPS_final_Project/outputs/2024-01-12/13-40-09/models/2024_01_12_13_40_09/tokenizer/"
-#model_path = "./MLOPS_final_Project/outputs/2024-01-12/13-40-09/models/2024_01_12_13_40_09/model"
-# tokenizer = T5Tokenizer.from_pretrained(tokenizer_path)
-#print(os.listdir(model_path))
-#model = T5ForConditionalGeneration.from_pretrained(model_path)
+input = "Mein Name ist Azeem und ich lebe in Indien."
+def translate(text: str):
+    input_ids = tokenizer("translate Danish to English: "+input, return_tensors="pt").input_ids  # Batch size 1
 
+    outputs = model.generate(input_ids)
 
-# Total parameters and trainable parameters.
-total_params = sum(p.numel() for p in model.parameters())
-print(f"{total_params:,} total parameters.")
-total_trainable_params = sum(
-    p.numel() for p in model.parameters() if p.requires_grad)
-print(f"{total_trainable_params:,} training parameters.")
+    decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    return decoded
+
+print(translate(input))

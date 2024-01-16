@@ -1,5 +1,5 @@
 # Start from a base Python 3.7 image
-FROM python:3.7-slim
+FROM python:3.10-slim
 
 # Install Git
 RUN apt-get update && \

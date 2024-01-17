@@ -391,7 +391,8 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- We tried to use the Compute engine to both run the model and build the docker image of the predict model but we soon realise that doing it locally was faster and we encountered some memory issues that we couldn't solve. Regarding the hardware employed, we started by using a e2-medium VM but then we needed to update it to a m1-highmem-16 because we ran out of memory. Still this last VM was not enough to allow us to run and deploy the model on the cloud.  ---
+--- We used the Compute Engine to execute virtual machines for tasks such as model training and hosting our deployed applications. However, during attempts to train models and build images, we encountered significant challenges related to memory limitations and prolonged processing times. These issues prompted us to adopt a dual approach: locally performing both model training and image-building tasks, while subsequently loading the pre-trained model and constructed images via either DVC or Docker Hub.
+In the course of our tasks, we initially employed an e2-medium VM. Nevertheless, since we ran out of memory, we found it necessary to upgrade to a more robust m1-highmem-16 VM. Even with this increased capacity, we encountered persistent challenges, preventing us from effectively running and deploying the model in the cloud. The limitations persisted despite the enhanced specifications of the m1-highmem-16 VM. ---
 
 ### Question 19
 
@@ -433,9 +434,7 @@ After building the docker images we use google cloud Run in order to run the app
 > *`curl -X POST -F "file=@file.json"<weburl>`*
 >
 > Answer:
-
---- 
-First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
+--- First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
 
 Then we deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
 

@@ -174,6 +174,7 @@ have to run the following commands:
 2. Test folder: This section houses scripts dedicated to executing tests, ensuring robustness and accuracy.
 3. Reports: This directory contains the outcomes of analyses in HTML format, alongside figures and graphics generated during the project's exploration and analysis phase.
 4. Docker: Essential for Docker-related files and configurations, this folder is integral for deployment and containerization.
+
 However, the notebooks folder, designated for Jupyter Notebook usage, and the docs folder, designated for documentation purposes, are unnecessary for our current project objectives. Removing these folders streamlines our project structure without impacting functionality. ---
 
 ### Question 6
@@ -338,7 +339,9 @@ The results of the experiments are written by default in the directory`outputs` 
 >
 > Answer:
 
---- question 15 fill here ---
+--- During our project we developed an image in order to make the deployment on the cloud. Since creating an image is so time consuming, we build the dockerimages directly on the cloud using a dockerfile.
+
+After building the docker images we use google cloud Run in order to run the application. ---
 
 ### Question 16
 
@@ -370,7 +373,10 @@ The results of the experiments are written by default in the directory`outputs` 
 >
 > Answer:
 
---- question 17 fill here ---
+--- We used the following srevices:
+1. Buckets: We used GCP buckets for storing the data.
+2. Containers: We used containers to store the images that we crated locally. 
+3. Run: We depoyed the model using the google Run.---
 
 ### Question 18
 
@@ -394,7 +400,7 @@ The results of the experiments are written by default in the directory`outputs` 
 >
 > Answer:
 
---- question 19 fill here ---
+--- [this figure] (reports/figures/figuresGroup9/data_bucket.png) ---
 
 ### Question 20
 

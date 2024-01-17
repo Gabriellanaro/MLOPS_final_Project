@@ -3,6 +3,9 @@ import torch
 from fastapi import FastAPI
 from transformers import T5Tokenizer, T5ForConditionalGeneration, TrainingArguments, Trainer
 
+#monitoring
+from prometheus_fastapi_instrumentator import Instrumentator, metrics
+
 app = FastAPI()
 
 MODEL = "t5-small"
@@ -25,6 +28,13 @@ def translate_text(text: str):
     decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     return {"translated_text": decoded}
+
+# Track specific metrics
+metrics.track_requests(app)
+metrics.track_exceptions(app)
+metrics.track_latency(app)
+
+Instrumentator().instrument(app).expose(app)
 
 
 # if __name__ == "__main__":

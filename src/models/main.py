@@ -18,7 +18,7 @@ def read_root():
 
 @app.post("/translate")
 def translate_text(text: str):
-    input_ids = tokenizer("translate Danish to English: " + text, return_tensors="pt").input_ids  # Batch size 1
+    input_ids = tokenizer("translate English to French: " + text, return_tensors="pt").input_ids  # Batch size 1
 
     outputs = model.generate(input_ids)
 

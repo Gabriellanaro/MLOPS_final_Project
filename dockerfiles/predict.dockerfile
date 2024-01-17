@@ -17,4 +17,4 @@ RUN pip install sentencepiece==0.1.96 --no-cache-dir
 RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
-ENTRYPOINT ["python", "-u", "src/model.py"]
+ENTRYPOINT ["python", "-u", "src/models/main.py"]

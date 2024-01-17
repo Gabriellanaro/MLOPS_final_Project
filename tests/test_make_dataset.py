@@ -1,6 +1,7 @@
 import pickle
 from datasets import Dataset
 import sys
+
 # from tests import _PATH_DATA
 import pandas as pd
 import os
@@ -14,13 +15,14 @@ _PROJECT_ROOT = os.path.dirname(_TEST_ROOT)  # root of project
 _PATH_DATA = os.path.join(_PROJECT_ROOT, "data")  # root of data
 print(_PATH_DATA)
 
+
 def test_preprocess_function():
     # Load the datasets
     print(f"Current working directory: {os.getcwd()}")
     print(f"Full path to Data folder: {_PATH_DATA}")
-    with open(f'{_PATH_DATA}/raw/train_set.pkl', 'rb') as f:
+    with open(f"{_PATH_DATA}/raw/train_set.pkl", "rb") as f:
         train_set = pickle.load(f)
-    with open(f'{_PATH_DATA}/raw/test_set.pkl', 'rb') as f:
+    with open(f"{_PATH_DATA}/raw/test_set.pkl", "rb") as f:
         test_set = pickle.load(f)
 
     train_dataset = Dataset.from_pandas(pd.DataFrame(train_set))
@@ -30,9 +32,9 @@ def test_preprocess_function():
     tokenized_test = test_dataset.map(preprocess_function, batched=True)
     print(_PATH_DATA)
     # Load the preprocessed data saved by make_dataset.py
-    with open(f'{_PATH_DATA}/processed/tokenized_train.pkl', 'rb') as f:
+    with open(f"{_PATH_DATA}/processed/tokenized_train.pkl", "rb") as f:
         saved_tokenized_train = pickle.load(f)
-    with open(f'{_PATH_DATA}/processed/tokenized_test.pkl', 'rb') as f:
+    with open(f"{_PATH_DATA}/processed/tokenized_test.pkl", "rb") as f:
         saved_tokenized_test = pickle.load(f)
 
     # Convert the Datasets to lists

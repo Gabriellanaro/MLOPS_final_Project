@@ -434,7 +434,10 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- We deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
+--- 
+First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
+
+Then we deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
 
 ### Question 23
 
@@ -449,7 +452,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 23 fill here ---
+--- Yes, we managed to implement monitoring in our deployed model. The metrics offer insight into the behavior of the fastAPI service. Their key metrics give us information about the number of requests received in the different roots - for instance, the path /translate received 4 post requests with different status codes -, the total number of objects collected during Python garbage collection, the sizes of incoming requests and outgoing responses, the request latency with a detailed distribution. The monitoring model-specific metrics ensures the model adaptation to changing patterns. This approach could help us in the future to maintain model performance and longevity by addressing issues, accommodating new data and preventing degradation. ---
 
 ### Question 24
 

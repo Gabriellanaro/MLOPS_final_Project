@@ -1,18 +1,20 @@
-# Start from a base Python 3.7 image
 FROM python:3.10-slim
 
-# Install Git
-RUN apt-get update && \
-    apt-get install -y git
+EXPOSE $PORT
 
-# Install DVC
-RUN pip install dvc[gs]
-
-# Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    software-properties-common \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install fastapi
+RUN pip install pydantic
+RUN pip install uvicorn
+RUN pip install -r requirements.txt
+
+COPY src/models/main.py src/models/main.py
+
+CMD exec uvicorn main:app --port $PORT --host 127.0.0.1 --workers 1

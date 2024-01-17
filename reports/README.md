@@ -373,7 +373,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- We used the following srevices:
+--- We used the following services:
 1. Buckets: We used GCP buckets for storing the data.
 2. Containers: We used containers to store the images that we crated locally. 
 3. Run: We depoyed the model using the google Run.---
@@ -391,7 +391,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 18 fill here ---
+--- We tried to use the Compute engine to both run the model and build the docker image of the predict model but we soon realise that doing it locally was faster and we encountered some memory issues that we couldn't solve. Regarding the hardware employed, we started by using a e2-medium VM but then we needed to update it to a m1-highmem-16 because we ran out of memory. Still this last VM was not enough to allow us to run and deploy the model on the cloud.  ---
 
 ### Question 19
 
@@ -434,7 +434,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 22 fill here ---
+--- We deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
 
 ### Question 23
 
@@ -463,7 +463,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 24 fill here ---
+---  ---
 
 ## Overall discussion of project
 
@@ -498,7 +498,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 26 fill here ---
+--- One of the biggest difficulties we have encountered is trying to get the technologies to communicate with each other and work simultanemously. This happened mostly because we were not familiar with most of the tools used in this course.   ---
 
 ### Question 27
 

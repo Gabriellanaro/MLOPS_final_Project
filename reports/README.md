@@ -434,8 +434,8 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 > *`curl -X POST -F "file=@file.json"<weburl>`*
 >
 > Answer:
---- First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
 
+--- First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
 Then we deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
 
 ### Question 23

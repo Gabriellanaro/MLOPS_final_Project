@@ -7,5 +7,4 @@ saved_model_path = "/MLOPS_final_Project/outputs/2024-01-12/13-40-09/models/2024
 # Load the model
 model = T5ForConditionalGeneration.from_pretrained(saved_model_path)
 script_model = torch.jit.script(model)
-script_model.save('deployable_model.pt')
-
+script_model.save("deployable_model.pt")

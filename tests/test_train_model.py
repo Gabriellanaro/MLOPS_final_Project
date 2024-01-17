@@ -1,7 +1,7 @@
 import unittest
 import torch
 import pytest
-from src.models.model import model, tokenizer
+from src.models.main import model, tokenizer
 
 
 class TestModelTranslation(unittest.TestCase):

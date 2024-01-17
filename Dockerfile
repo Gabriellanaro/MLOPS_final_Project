@@ -16,5 +16,6 @@ RUN pip install uvicorn
 RUN pip install -r requirements.txt
 
 COPY src/models/main.py src/models/main.py
+COPY requirements.txt requirements.txt
 
 CMD exec uvicorn main:app --port $PORT --host 127.0.0.1 --workers 1

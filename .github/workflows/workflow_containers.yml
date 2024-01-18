@@ -8,6 +8,17 @@ jobs:
   build_trainer:
     runs-on: ubuntu-latest
     steps:
+      - name: Install DVC
+        run: |
+          pip install dvc dvc-gs
+          pip install dvc[gdrive]
+
+      - uses: iterative/setup-dvc@v1
+      - name: Get data
+        run: dvc pull
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Build the trainer docker image
@@ -21,6 +32,17 @@ jobs:
   build_predict:
     runs-on: ubuntu-latest
     steps:
+      - name: Install DVC
+        run: |
+          pip install dvc dvc-gs
+          pip install dvc[gdrive]
+
+      - uses: iterative/setup-dvc@v1
+      - name: Get data
+        run: dvc pull
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Build the predict docker image

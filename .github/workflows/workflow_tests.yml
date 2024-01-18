@@ -26,6 +26,10 @@ jobs:
       run: |
         pip install dvc dvc-gs
         pip install dvc[gdrive]
+    
+    - name: Install SentencePiece
+    run: |
+      pip install sentencepiece
 
     - uses: iterative/setup-dvc@v1
     - name: Get data

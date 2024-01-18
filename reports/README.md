@@ -81,7 +81,7 @@ end of the project.
 * [X] Get your model training in GCP using either the Engine or Vertex AI
 * [X] Create a FastAPI application that can do inference using your model
 * [ ] If applicable, consider deploying the model locally using torchserve
-* [ ] Deploy your model in GCP using either Functions or Run as the backend
+* [X] Deploy your model in GCP using either Functions or Run as the backend
 
 ### Week 3
 
@@ -94,9 +94,9 @@ end of the project.
 
 ### Additional
 
-* [ ] Revisit your initial project description. Did the project turn out as you wanted?
-* [ ] Make sure all group members have a understanding about all parts of the project
-* [ ] Uploaded all your code to github
+* [X] Revisit your initial project description. Did the project turn out as you wanted?
+* [X] Make sure all group members have a understanding about all parts of the project
+* [X] Uploaded all your code to github
 
 ## Group information
 
@@ -322,7 +322,7 @@ The results of the experiments are written by default in the directory `outputs`
 >
 > Answer:
 
---- Our code sets up a hyperparameter sweep using the Weights & Biases (W&B) library to optimize the training process of t5-small. As it can be seen in [this figure](figures/figuresGroup9/chartsWandb.jpg) and in [this figure](figures/figuresGroup9/chart2Wandb.jpg) we have made different experiments changing the `learning_rate, batch_size and weight_decay`. As well, [this figure](figures/figuresGroup9/chart3Wandb.jpg) shows which of the parameters has more impact on the model. In summary, this code automates the hyperparameter tuning process, leveraging W&B for experiment tracking and optimization, and utilizes the `Trainer` class for training a transformer-based model with varying hyperparameter configurations.---
+--- Our code sets up a hyperparameter sweep using the Weights & Biases (W&B) library to optimize the training process of t5-small. As it can be seen in ![this figure](figures/figuresGroup9/chartsWandb.jpg) and in ![this figure](figures/figuresGroup9/chart2Wandb.jpg) we have made different experiments changing the `learning_rate, batch_size and weight_decay`. As well, ![this figure](figures/figuresGroup9/chart3Wandb.jpg) shows which of the parameters has more impact on the model. In summary, this code automates the hyperparameter tuning process, leveraging W&B for experiment tracking and optimization, and utilizes the `Trainer` class for training a transformer-based model with varying hyperparameter configurations.---
 
 ### Question 15
 
@@ -397,20 +397,20 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 ### Question 19
 
 > **Insert 1-2 images of your GCP bucket, such that we can see what data you have stored in it.**
-> **You can take inspiration from [this figure](figures/bucket.png).**
+> **You can take inspiration from ![this figure](figures/bucket.png).**
 >
 > Answer:
 
---- [this figure] (reports/figures/figuresGroup9/data_bucket.png) ---
+--- The image can be found in ![this figure](reports/figures/figuresGroup9/data_bucket.png) ---
 
 ### Question 20
 
 > **Upload one image of your GCP container registry, such that we can see the different images that you have stored.**
-> **You can take inspiration from [this figure](figures/registry.png).**
+> **You can take inspiration from ![this figure](figures/registry.png).**
 >
 > Answer:
 
---- question 20 fill here ---
+--- The image can be found in ![this figure](reports\figures\figuresGroup9\containerRegistry.jpg) ---
 
 ### Question 21
 
@@ -419,7 +419,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- question 21 fill here ---
+--- The image can be found in ![this figure](reports\figures\figuresGroup9\build_history.jpg) ---
 
 ### Question 22
 
@@ -435,8 +435,8 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
-Then we deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
+--- First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the `T5 model` returns the translated text in a `JSON` response. Then we use the `uvicorn` server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
+Then we deployed our model in the cloud. We started by building the image of the model locally and then we push it directly to gcloud. Once in the gcloud we created the service. It is possible to access the service through the URL given when the build of the service successed. This is the URL: `https://engtofra-x6izxsjlwa-lz.a.run.app/docs` ---
 
 ### Question 23
 
@@ -465,7 +465,8 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
----  ---
+--- We all used the same account, the total amount of credit we used is: 111.13$ 
+The most expensive was `Compute Engine` reaching an amount of 60$.  ---
 
 ## Overall discussion of project
 
@@ -500,7 +501,7 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
---- One of the biggest difficulties we have encountered is trying to get the technologies to communicate with each other and work simultanemously. This happened mostly because we were not familiar with most of the tools used in this course, so we spent a lot of time trying to earn how these technologies work. We struggle fine tunning the model as it was not translating correctly. Training and testing was difficult but we solve it after trying hard, we encountered some different envinormental problems that we fixed little by little. As well, after creating the unit tests, we tried to calculate the coverage but in the end we didn't do it as we were running out of time and wanted to deploy the model locally/cloud. The most difficult part was the deployment of the docker image both locally and in cloud. We overcome this by fixing the `Dockerfile`. We deployed the model in local and then in cloud and it was finally work.  ---
+--- One of the biggest difficulties we have encountered is trying to get the technologies to communicate with each other and work simultanemously. This happened mostly because we were not familiar with most of the tools used in this course, so we spent a lot of time trying to earn how these technologies work. We struggle fine tunning the model as it was not translating correctly. Training and testing was difficult but we solve it after trying hard, we encountered some different envinormental problems that we fixed little by little. As well, after creating the unit tests, we tried to calculate the coverage but in the end we didn't do it as we were running out of time and wanted to deploy the model locally/cloud. The most difficult part was the deployment of the docker image both locally and in cloud. We overcome this by fixing the `Dockerfile`. We deployed the model in local and then in cloud and it was finally working.  ---
 
 ### Question 27
 

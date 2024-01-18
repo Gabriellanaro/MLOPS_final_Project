@@ -517,4 +517,49 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
+Student s233541:
+      Git repository
+      Set up version control for the project's data (Drive and GCP Buckets)
+      Coockiecutter template
+      Setting the projects in gcp
+      Deploying the model locally and in cloud
+      Cloud build trigger and Cloud run service
+
+Student s212246:
+      create make_dataset.py file and fill out the training script
+      unit tests related to model construction and training
+      training models in the cloud (GCP) and deploying them
+      Creating triggerflows for building images automatically and pushing them in dockerhub
+      Tried to calculate the coverage
+
+Student s233124
+       Building Docker containers locally
+       Getting continuous integration running on the GitHub repository
+       Writing configuration files for experiments, utilizing Hydra to manage hyperparameters
+       Ensuring monitoring for both system telemetry and deployed model performance
+       Check model robustness with data-drifting
+
+Student s233132
+       Creating final diagram
+       Create a FastAPI application that can do inference
+       do some profiling to optimize the code
+       Deploying the model on gcloud
+
+
+Student s233144
+      Create make_dataset.py file and fill out the training script
+      Unit tests related to model construction and training
+      Used Weights & Biases to log training progress and metrics, and running hyperparameter optimization sweeps.
+      Create a FastAPI application that can do inference
+
+All the members contributed in:
+      Adhering to good coding practices (Pep8)
+      Deploy your model in GCP using Run as the backend
+      Answer the report questions
+      Construct one or multiple docker files for your code
+      Build the docker files locally and make sure they work as intended
+      Create a dedicated environment for the project
+
+Overall, all team members actively contributed to various aspects of the project, adhering to good coding practices, and collaborating to achieve the project goals.
+
 --- question 27 fill here ---

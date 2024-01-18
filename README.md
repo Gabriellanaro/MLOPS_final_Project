@@ -14,7 +14,7 @@ In order to do this we used [t5-small model](https://huggingface.co/t5-small) us
 [Ted Talks dataset](https://huggingface.co/datasets/ted_talks_iwslt) from [Ted Conference Website](https://ted.com).
 
 ## What framework are you going to use and you do you intend to include the framework into your project?
-Since the scope of the project is to translate from English to Frencg, we are going to use Transformers framework. Transformers offers pre-built architectures for translation purposes, with a large variety of tools, and we can find it available in PyTorch.
+Since the scope of the project is to translate from English to French, we are going to use Transformers framework. Transformers offers pre-built architectures for translation purposes, with a large variety of tools, and we can find it available in PyTorch.
 In order to include the framework into our project, we have selected a pre-trained model named T5, which is a text-to-text model that can translate multiple languages among many others tasks available. We will also train, test and validate the model with the selected data.
 
 

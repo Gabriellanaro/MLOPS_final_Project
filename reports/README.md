@@ -397,20 +397,21 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 ### Question 19
 
 > **Insert 1-2 images of your GCP bucket, such that we can see what data you have stored in it.**
-> **You can take inspiration from ![this figure](figures/bucket.png).**
+> **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
 
---- The image can be found in ![this figure](figures/figuresGroup9/data_bucket.png) ---
-
+--- The image can be found in 
+![this figure](figures/figuresGroup9/data_bucket.png)
 ### Question 20
 
 > **Upload one image of your GCP container registry, such that we can see the different images that you have stored.**
-> **You can take inspiration from ![this figure](figures/registry.png).**
+> **You can take inspiration from [this figure](figures/registry.png).**
 >
 > Answer:
 
---- The image can be found in ![this figure](figures/figuresGroup9/containerRegistry.jpg) ---
+--- The image can be found in 
+![this figure](figures/figuresGroup9/containerRegistry.jpg) ---
 
 ### Question 21
 
@@ -419,7 +420,8 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- The image can be found in ![this figure](figures/figuresGroup9/build_history.jpg) ---
+--- The image can be found in 
+![this figure](figures/figuresGroup9/build_history.jpg) ---
 
 ### Question 22
 

@@ -522,8 +522,7 @@ To integrate our project with the cloud, we utilized DVC and cloud buckets for s
 > *All members contributed to code by...*
 >
 > Answer:
-
-Student s233541:
+--- Student s233541:
       Git repository
       Set up version control for the project's data (Drive and GCP Buckets)
       Coockiecutter template
@@ -566,6 +565,4 @@ All the members contributed in:
       Build the docker files locally and make sure they work as intended
       Create a dedicated environment for the project
 
-Overall, all team members actively contributed to various aspects of the project, adhering to good coding practices, and collaborating to achieve the project goals.
-
---- question 27 fill here ---
+Overall, all team members actively contributed to various aspects of the project, adhering to good coding practices, and collaborating to achieve the project goals. ---

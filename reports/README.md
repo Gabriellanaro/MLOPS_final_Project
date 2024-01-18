@@ -268,7 +268,7 @@ Once the PR was approved, the changes were merged into the `main` branch. This w
 >
 > Answer:
 
---- question 11 fill here ---
+--- In our continue integration setup we are running unittesting, github actions, pre commit, continuous containers. Use unittestings are used to test the make_dataset script and training loop. The github actions tests our unittesting on different operating systems. Pre commit comprises a set of checks and actions performed on the files before they are added to a commit. For istance it removes white spaces at the end of the lines, makes sure that each file terminates with an empty line, checks that the yaml files are well formatted, check that big size files are not added and finally ruff-formatting the code. Continuous containers are used to rebuild automatically the images of the docker files train, prediction and service every time the code is pushed or merged to the main branch. Automatically the images are pushed in the docker hub and can be retrieved by the docker pull command. ---
 
 ## Running code and tracking experiments
 
@@ -305,7 +305,7 @@ The results of the experiments are written by default in the directory `outputs`
 >
 > Answer:
 
---- question 13 fill here ---
+---Due to the lack of time we didn't manage to ensure that no information is lost when running the experiments, and it's something we should delve into in future improvements of the project ---
 
 ### Question 14
 
@@ -522,5 +522,47 @@ To integrate our project with the cloud, we utilized DVC and cloud buckets for s
 > *All members contributed to code by...*
 >
 > Answer:
+--- Student s233541:
+      Git repository
+      Set up version control for the project's data (Drive and GCP Buckets)
+      Coockiecutter template
+      Setting the projects in gcp
+      Deploying the model locally and in cloud
+      Cloud build trigger and Cloud run service
 
---- question 27 fill here ---
+Student s212246:
+      create make_dataset.py file and fill out the training script
+      unit tests related to model construction and training
+      training models in the cloud (GCP) and deploying them
+      Creating triggerflows for building images automatically and pushing them in dockerhub
+      Tried to calculate the coverage
+
+Student s233124
+       Building Docker containers locally
+       Getting continuous integration running on the GitHub repository
+       Writing configuration files for experiments, utilizing Hydra to manage hyperparameters
+       Ensuring monitoring for both system telemetry and deployed model performance
+       Check model robustness with data-drifting
+
+Student s233132
+       Creating final diagram
+       Create a FastAPI application that can do inference
+       do some profiling to optimize the code
+       Deploying the model on gcloud
+
+
+Student s233144
+      Create make_dataset.py file and fill out the training script
+      Unit tests related to model construction and training
+      Used Weights & Biases to log training progress and metrics, and running hyperparameter optimization sweeps.
+      Create a FastAPI application that can do inference
+
+All the members contributed in:
+      Adhering to good coding practices (Pep8)
+      Deploy your model in GCP using Run as the backend
+      Answer the report questions
+      Construct one or multiple docker files for your code
+      Build the docker files locally and make sure they work as intended
+      Create a dedicated environment for the project
+
+Overall, all team members actively contributed to various aspects of the project, adhering to good coding practices, and collaborating to achieve the project goals. ---

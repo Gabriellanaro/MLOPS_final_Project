@@ -58,13 +58,13 @@ end of the project.
 * [X] Add a model file and a training script and get that running
 * [X] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
 * [ ] Remember to comply with good coding practices (`pep8`) while doing the project
-* [ ] Do a bit of code typing and remember to document essential parts of your code
+* [X] Do a bit of code typing and remember to document essential parts of your code
 * [X] Setup version control for your data or part of your data
 * [X] Construct one or multiple docker files for your code
 * [X] Build the docker files locally and make sure they work as intended
 * [X] Write one or multiple configuration files for your experiments
 * [X] Used Hydra to load the configurations and manage your hyperparameters
-* [ ] When you have something that works somewhat, remember at some point to do some profiling and see if
+* [X] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code
 * [X] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.
@@ -268,7 +268,7 @@ Once the PR was approved, the changes were merged into the `main` branch. This w
 >
 > Answer:
 
---- question 11 fill here ---
+--- In our continue integration setup we are running unittesting, github actions, pre commit, continuous containers. Use unittestings are used to test the make_dataset script and training loop. The github actions tests our unittesting on different operating systems. Pre commit comprises a set of checks and actions performed on the files before they are added to a commit. For istance it removes white spaces at the end of the lines, makes sure that each file terminates with an empty line, checks that the yaml files are well formatted, check that big size files are not added and finally ruff-formatting the code. Continuous containers are used to rebuild automatically the images of the docker files train, prediction and service every time the code is pushed or merged to the main branch. Automatically the images are pushed in the docker hub and can be retrieved by the docker pull command. ---
 
 ## Running code and tracking experiments
 
@@ -305,7 +305,7 @@ The results of the experiments are written by default in the directory `outputs`
 >
 > Answer:
 
---- question 13 fill here ---
+---Due to the lack of time we didn't manage to ensure that no information is lost when running the experiments, and it's something we should delve into in future improvements of the project ---
 
 ### Question 14
 
@@ -486,7 +486,13 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
---- question 25 fill here ---
+--- [this figure] (reports/figures/figuresGroup9/mlopsDiagram.png)
+
+We should start looking at the diagram at our local PyTorch application, where we implemented the t5-small model from the Transformers framework. This framework formed the backbone of our project's initial stages, tracked through Git on GitHub.
+
+We configured a Conda environment to streamline the installation of essential packages and meet project requirements. Weight and Biases, along with Hydra, served as our tools for recording experiments and developing project configuration files. Additionally, we crafted a profiler to debug and optimize our project, all following the Cookiecutter code structure.
+
+To integrate our project with the cloud, we utilized DVC and cloud buckets for storing both processed and raw data. For model deployment, Docker played a pivotal role. We constructed the Docker image locally and subsequently pushed it to the container registry. Following this, we built a service to deploy the application. Users can obtain translations through a request to FastAPI, completing the deployment process.---
 
 ### Question 26
 

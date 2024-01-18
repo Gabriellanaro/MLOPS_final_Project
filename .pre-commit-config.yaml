@@ -14,4 +14,4 @@ repos:
   rev: v0.1.13
   hooks:
     # Run the formatter.
-    - id: ruff-format
+    -   id: ruff-format

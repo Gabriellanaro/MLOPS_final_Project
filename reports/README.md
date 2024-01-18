@@ -401,7 +401,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- The image can be found in ![this figure](reports/figures/figuresGroup9/data_bucket.png) ---
+--- The image can be found in ![this figure](figures/figuresGroup9/data_bucket.png) ---
 
 ### Question 20
 
@@ -410,7 +410,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- The image can be found in ![this figure](reports/figures/figuresGroup9/containerRegistry.jpg) ---
+--- The image can be found in ![this figure](figures/figuresGroup9/containerRegistry.jpg) ---
 
 ### Question 21
 
@@ -419,7 +419,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- The image can be found in ![this figure](reports/figures/figuresGroup9/build_history.jpg) ---
+--- The image can be found in ![this figure](figures/figuresGroup9/build_history.jpg) ---
 
 ### Question 22
 

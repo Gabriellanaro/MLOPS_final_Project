@@ -9,8 +9,8 @@ on:
 jobs:
   build-linux:
     runs-on: ubuntu-latest
-    paths-ignore:
-      - '**/cloudbuild.yaml'
+    # paths-ignore:
+    #   - '**/cloudbuild.yaml'
 
     steps:
     - name: Checkout
@@ -46,8 +46,8 @@ jobs:
 
   build-macos:
     runs-on: macos-latest
-    paths-ignore:
-      - '**/cloudbuild.yaml'
+    # paths-ignore:
+    #   - '**/cloudbuild.yaml'
 
     steps:
     - name: Checkout
@@ -79,8 +79,8 @@ jobs:
 
   build-windows:
     runs-on: windows-latest
-    paths-ignore:
-      - '**/cloudbuild.yaml'
+    # paths-ignore:
+    #   - '**/cloudbuild.yaml'
 
     steps:
     - name: Checkout

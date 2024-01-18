@@ -148,10 +148,10 @@ end of the project.
 >
 > Answer:
 
---- We used conda for managing our dependencies. The list of dependencies could be found in the `requirements.txt` file. This allow the user to get a complete copy of our environment. One would 
+--- We used conda for managing our dependencies. The list of dependencies could be found in the `requirements.txt` file. This allow the user to get a complete copy of our environment. One would
 have to run the following commands:
 1. `git clone https://github.com/Gabriellanaro/MLOPS_final_Project`
-2. Navigate to project directory 
+2. Navigate to project directory
 3. Create a virtual environment: `conda create --name <nameOfTheEnv>`
 4. Activate the virtual environment: `conda activate <nameOfTheEnv>`
 5. Run: `pip install -r requirements.txt`    ---
@@ -287,9 +287,9 @@ Once the Pull Request was approved, the changes were merged into the main branch
 >
 > Answer:
 
---- In our project, we configured experiments dynamically changing and adding hyperparameters on the fly from the command line. 
+--- In our project, we configured experiments dynamically changing and adding hyperparameters on the fly from the command line.
 
-Example: 
+Example:
 `python train_model.py hp.batch_size=16 hp.epochs=4`
 
 The results of the experiments are written by default in the directory`outputs` ---
@@ -375,7 +375,7 @@ After building the docker images we use google cloud Run in order to run the app
 
 --- We used the following services:
 1. Buckets: We used GCP buckets for storing the data.
-2. Containers: We used containers to store the images that we crated locally. 
+2. Containers: We used containers to store the images that we crated locally.
 3. Run: We depoyed the model using the google Run.---
 
 ### Question 18

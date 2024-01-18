@@ -19,5 +19,6 @@ RUN pip install fastapi
 RUN pip install pydantic
 RUN pip install uvicorn
 RUN pip install -r requirements.txt
+RUN pip install sentencepiece
 
 CMD exec uvicorn src.models.main:app --port $PORT --host 0.0.0.0 --workers 1

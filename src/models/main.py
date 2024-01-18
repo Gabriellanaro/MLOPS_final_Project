@@ -30,9 +30,9 @@ def translate_text(text: str):
     return {"translated_text": decoded}
 
 # Track specific metrics
-metrics.track_requests(app)
-metrics.track_exceptions(app)
-metrics.track_latency(app)
+# metrics.track_requests(app)
+# metrics.track_exceptions(app)
+# metrics.track_latency(app)
 
 Instrumentator().instrument(app).expose(app)
 

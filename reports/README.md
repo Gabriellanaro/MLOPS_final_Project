@@ -268,7 +268,7 @@ Once the PR was approved, the changes were merged into the `main` branch. This w
 >
 > Answer:
 
---- question 11 fill here ---
+--- In our continue integration setup we are running unittesting, github actions, pre commit, continuous containers. Use unittestings are used to test the make_dataset script and training loop. The github actions tests our unittesting on different operating systems. Pre commit comprises a set of checks and actions performed on the files before they are added to a commit. For istance it removes white spaces at the end of the lines, makes sure that each file terminates with an empty line, checks that the yaml files are well formatted, check that big size files are not added and finally ruff-formatting the code. Continuous containers are used to rebuild automatically the images of the docker files train, prediction and service every time the code is pushed or merged to the main branch. Automatically the images are pushed in the docker hub and can be retrieved by the docker pull command. ---
 
 ## Running code and tracking experiments
 
@@ -305,7 +305,7 @@ The results of the experiments are written by default in the directory `outputs`
 >
 > Answer:
 
---- question 13 fill here ---
+---Due to the lack of time we didn't manage to ensure that no information is lost when running the experiments, and it's something we should delve into in future improvements of the project ---
 
 ### Question 14
 

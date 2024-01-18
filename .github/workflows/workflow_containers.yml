@@ -8,6 +8,16 @@ jobs:
   build_trainer:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Install DVC
         run: |
           pip install dvc dvc-gs
@@ -32,6 +42,16 @@ jobs:
   build_predict:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Install DVC
         run: |
           pip install dvc dvc-gs

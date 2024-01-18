@@ -151,7 +151,7 @@ end of the project.
 --- We used conda/pip for managing our dependencies. The list of dependencies could be found in the `requirements.txt` file. This allow the user to get a complete copy of our environment. One would 
 have to run the following commands:
 1. `git clone https://github.com/Gabriellanaro/MLOPS_final_Project`
-2. Navigate to project directory 
+2. Navigate to project directory
 3. Create a virtual environment: `conda create --name <nameOfTheEnv>`
 4. Activate the virtual environment: `conda activate <nameOfTheEnv>`
 5. Run: `pip install -r requirements.txt`    ---

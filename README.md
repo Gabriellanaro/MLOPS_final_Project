@@ -1,16 +1,16 @@
-# MLops project : Natural Language Processing 
-Lanaro Gabriel s233541  
-Marina Urriola Fernando A s233144  
-Saccardo Alessia s212246  
-Suarez Caballero Nerea s233132  
-Turetta Gabriele s233124  
+# MLops project : Natural Language Processing
+Lanaro Gabriel s233541
+Marina Urriola Fernando A s233144
+Saccardo Alessia s212246
+Suarez Caballero Nerea s233132
+Turetta Gabriele s233124
 
 
 ## Overall goal of the project
 
-The final goal of the project is to use natural language processing (NLP) 
-to create a tranlastor from English to French applying the [Transformer framework](https://huggingface.co/docs/transformers/index). 
-In order to do this we used [t5-small model](https://huggingface.co/t5-small) using the 
+The final goal of the project is to use natural language processing (NLP)
+to create a tranlastor from English to French applying the [Transformer framework](https://huggingface.co/docs/transformers/index).
+In order to do this we used [t5-small model](https://huggingface.co/t5-small) using the
 [Ted Talks dataset](https://huggingface.co/datasets/ted_talks_iwslt) from [Ted Conference Website](https://ted.com).
 
 ## What framework are you going to use and you do you intend to include the framework into your project?

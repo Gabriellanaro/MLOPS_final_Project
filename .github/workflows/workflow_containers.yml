@@ -8,15 +8,8 @@ jobs:
   build_trainer:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.11
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Install DVC
         run: |
@@ -29,8 +22,8 @@ jobs:
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
       - name: Build the trainer docker image
         run: |
           echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login \
@@ -42,6 +35,8 @@ jobs:
   build_predict:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Install DVC
         run: |
@@ -50,16 +45,13 @@ jobs:
 
       - uses: iterative/setup-dvc@v1
 
-      - name: Change to DVC repository directory
-        run: cd ./MLOPS_final_Project
-
       - name: Get data
         run: dvc pull
         env:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
       - name: Build the predict docker image
         run: |
           echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login \

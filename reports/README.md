@@ -58,13 +58,13 @@ end of the project.
 * [X] Add a model file and a training script and get that running
 * [X] Remember to fill out the `requirements.txt` file with whatever dependencies that you are using
 * [ ] Remember to comply with good coding practices (`pep8`) while doing the project
-* [ ] Do a bit of code typing and remember to document essential parts of your code
+* [X] Do a bit of code typing and remember to document essential parts of your code
 * [X] Setup version control for your data or part of your data
 * [X] Construct one or multiple docker files for your code
 * [X] Build the docker files locally and make sure they work as intended
 * [X] Write one or multiple configuration files for your experiments
 * [X] Used Hydra to load the configurations and manage your hyperparameters
-* [ ] When you have something that works somewhat, remember at some point to do some profiling and see if
+* [X] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code
 * [X] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.

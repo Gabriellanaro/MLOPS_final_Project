@@ -1,4 +1,4 @@
-hp: 
+hp:
   batch_size: 16
   num_procs: 16
   epochs: 1

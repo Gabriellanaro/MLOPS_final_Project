@@ -9,103 +9,97 @@ on:
 jobs:
   build-linux:
     runs-on: ubuntu-latest
-    # paths-ignore:
-    #   - '**/cloudbuild.yaml'
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Install DVC
-      run: |
-        pip install dvc dvc-gs
-        pip install dvc[gdrive]
+      - name: Install DVC
+        run: |
+          pip install dvc dvc-gs
+          pip install dvc[gdrive]
 
-    - name: Install SentencePiece
-    run: |
-      pip install sentencepiece
+      - name: Install SentencePiece
+        run: |
+          pip install sentencepiece
 
-    - uses: iterative/setup-dvc@v1
-    - name: Get data
-      run: dvc pull
-      env:
-        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      - uses: iterative/setup-dvc@v1
+      - name: Get data
+        run: dvc pull
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        pytest -v
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pytest -v
 
   build-macos:
     runs-on: macos-latest
-    # paths-ignore:
-    #   - '**/cloudbuild.yaml'
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Install DVC
-      run: |
-        pip install dvc dvc-gs
-        pip install dvc[gdrive]
+      - name: Install DVC
+        run: |
+          pip install dvc dvc-gs
+          pip install dvc[gdrive]
 
-    - uses: iterative/setup-dvc@v1
-    - name: Get data
-      run: dvc pull
-      env:
-        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      - uses: iterative/setup-dvc@v1
+      - name: Get data
+        run: dvc pull
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        pytest -v
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pytest -v
 
   build-windows:
     runs-on: windows-latest
-    # paths-ignore:
-    #   - '**/cloudbuild.yaml'
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Install DVC
-      run: |
-        pip install dvc dvc-gs
-        pip install dvc[gdrive]
+      - name: Install DVC
+        run: |
+          pip install dvc dvc-gs
+          pip install dvc[gdrive]
 
-    - uses: iterative/setup-dvc@v1
-    - name: Get data
-      run: dvc pull
-      env:
-        GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+      - uses: iterative/setup-dvc@v1
+      - name: Get data
+        run: dvc pull
+        env:
+          GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
 
-    - name: Test with pytest
-      run: |
-        pip install pytest
-        pytest -v
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          pytest -v

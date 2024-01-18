@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
 COPY src/ src/
-COPY data/ data/
 COPY src/models/main.py src/models/main.py
 
 RUN pip install fastapi

@@ -79,15 +79,15 @@ end of the project.
 * [X] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
 * [ ] Create a trigger workflow for automatically building your docker images
 * [X] Get your model training in GCP using either the Engine or Vertex AI
-* [ ] Create a FastAPI application that can do inference using your model
+* [X] Create a FastAPI application that can do inference using your model
 * [ ] If applicable, consider deploying the model locally using torchserve
 * [ ] Deploy your model in GCP using either Functions or Run as the backend
 
 ### Week 3
 
-* [ ] Check how robust your model is towards data drifting
-* [ ] Setup monitoring for the system telemetry of your deployed model
-* [ ] Setup monitoring for the performance of your deployed model
+* [X] Check how robust your model is towards data drifting
+* [X] Setup monitoring for the system telemetry of your deployed model
+* [X] Setup monitoring for the performance of your deployed model
 * [ ] If applicable, play around with distributed data loading
 * [ ] If applicable, play around with distributed model training
 * [ ] Play around with quantization, compilation and pruning for you trained models to increase inference speed
@@ -373,7 +373,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- We used the following srevices:
+--- We used the following services:
 1. Buckets: We used GCP buckets for storing the data.
 2. Containers: We used containers to store the images that we crated locally. 
 3. Run: We depoyed the model using the google Run.---
@@ -391,7 +391,8 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 18 fill here ---
+--- We used the Compute Engine to execute virtual machines for tasks such as model training and hosting our deployed applications. However, during attempts to train models and build images, we encountered significant challenges related to memory limitations and prolonged processing times. These issues prompted us to adopt a dual approach: locally performing both model training and image-building tasks, while subsequently loading the pre-trained model and constructed images via either DVC or Docker Hub.
+In the course of our tasks, we initially employed an e2-medium VM. Nevertheless, since we ran out of memory, we found it necessary to upgrade to a more robust m1-highmem-16 VM. Even with this increased capacity, we encountered persistent challenges, preventing us from effectively running and deploying the model in the cloud. The limitations persisted despite the enhanced specifications of the m1-highmem-16 VM. ---
 
 ### Question 19
 
@@ -434,7 +435,8 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 22 fill here ---
+--- First, we deployed the model locally using fast API. We created an endpoint accessible via an HTTP POST request to the /translate path that takes as input a test and using the T5 model returns the translated text in a JSON response. Then we use the uvicorn server to run the application locally in a specific host and port. Running the command python translation_app.py you can access the endpoint s locally in the URL http://127.0.0.1:8000/translate.
+Then we deployed our model in the cloud. We started by building the image of the predict model locally and then we upload it to the docker hub. Once in the gcloud we retrived the docker image from the docker hub and then we created the service. It is possible to access the service through the URL given when the build of the service successed.  ---
 
 ### Question 23
 
@@ -449,7 +451,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 23 fill here ---
+--- Yes, we managed to implement monitoring in our deployed model. The metrics offer insight into the behavior of the fastAPI service. Their key metrics give us information about the number of requests received in the different roots - for instance, the path /translate received 4 post requests with different status codes -, the total number of objects collected during Python garbage collection, the sizes of incoming requests and outgoing responses, the request latency with a detailed distribution. The monitoring model-specific metrics ensures the model adaptation to changing patterns. This approach could help us in the future to maintain model performance and longevity by addressing issues, accommodating new data and preventing degradation. ---
 
 ### Question 24
 
@@ -463,7 +465,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 24 fill here ---
+---  ---
 
 ## Overall discussion of project
 
@@ -498,7 +500,7 @@ After building the docker images we use google cloud Run in order to run the app
 >
 > Answer:
 
---- question 26 fill here ---
+--- One of the biggest difficulties we have encountered is trying to get the technologies to communicate with each other and work simultanemously. This happened mostly because we were not familiar with most of the tools used in this course.   ---
 
 ### Question 27
 

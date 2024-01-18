@@ -13,15 +13,11 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
 COPY src/ src/
-COPY src/models/ src/models/
-COPY data/ data/
 COPY src/models/main.py src/models/main.py
 
 RUN pip install fastapi
 RUN pip install pydantic
 RUN pip install uvicorn
-RUN pip install -r requirements.txt --no-cache-dir
-#RUN pip install . --no-deps --no-cache-dir
-
+RUN pip install -r requirements.txt
 
 CMD exec uvicorn src.models.main:app --port $PORT --host 0.0.0.0 --workers 1

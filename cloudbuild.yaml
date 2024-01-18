@@ -1,9 +1,5 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/vernal-aleph-410709/python-git-dvc', '.']
+    args: ['build', '-t', 'gcr.io/vernal-aleph-410709/main', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/vernal-aleph-410709/python-git-dvc']
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/vernal-aleph-410709/trainer', '.']
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/vernal-aleph-410709/trainer']
+    args: ['push', 'gcr.io/vernal-aleph-410709/main']

@@ -486,7 +486,10 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
---- [this figure] (reports/figures/figuresGroup9/mlopsDiagram.png)
+--- 
+Diagram:
+
+![this figure](figures/figuresGroup9/mlopsDiagram.png)
 
 We should start looking at the diagram at our local PyTorch application, where we implemented the t5-small model from the Transformers framework. This framework formed the backbone of our project's initial stages, tracked through Git on GitHub.
 

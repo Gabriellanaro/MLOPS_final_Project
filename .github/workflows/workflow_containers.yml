@@ -51,7 +51,7 @@ jobs:
       - uses: iterative/setup-dvc@v1
 
       - name: Change to DVC repository directory
-        run: cd ..
+        run: cd MLOPS_final_Project
 
       - name: Get data
         run: dvc pull

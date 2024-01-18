@@ -64,7 +64,7 @@ end of the project.
 * [X] Build the docker files locally and make sure they work as intended
 * [X] Write one or multiple configuration files for your experiments
 * [X] Used Hydra to load the configurations and manage your hyperparameters
-* [ ] When you have something that works somewhat, remember at some point to do some profiling and see if
+* [X] When you have something that works somewhat, remember at some point to do some profiling and see if
       you can optimize your code
 * [X] Use Weights & Biases to log training progress and other important metrics/artifacts in your code. Additionally,
       consider running a hyperparameter optimization sweep.
@@ -77,11 +77,11 @@ end of the project.
 * [ ] Calculate the coverage.
 * [X] Get some continuous integration running on the github repository
 * [X] Create a data storage in GCP Bucket for you data and preferable link this with your data version control setup
-* [X] Create a trigger workflow for automatically building your docker images
+* [ ] Create a trigger workflow for automatically building your docker images
 * [X] Get your model training in GCP using either the Engine or Vertex AI
 * [X] Create a FastAPI application that can do inference using your model
 * [ ] If applicable, consider deploying the model locally using torchserve
-* [X] Deploy your model in GCP using either Functions or Run as the backend
+* [ ] Deploy your model in GCP using either Functions or Run as the backend
 
 ### Week 3
 
@@ -96,7 +96,7 @@ end of the project.
 
 * [ ] Revisit your initial project description. Did the project turn out as you wanted?
 * [ ] Make sure all group members have a understanding about all parts of the project
-* [X] Uploaded all your code to github
+* [ ] Uploaded all your code to github
 
 ## Group information
 
@@ -486,10 +486,7 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
---- 
-Diagram:
-
-![this figure](figures/figuresGroup9/mlopsDiagram.png)
+--- [this figure] (reports/figures/figuresGroup9/mlopsDiagram.png)
 
 We should start looking at the diagram at our local PyTorch application, where we implemented the t5-small model from the Transformers framework. This framework formed the backbone of our project's initial stages, tracked through Git on GitHub.
 

@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+    push:
+        branches: [continuous_container]
+
+jobs:
+    build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the trainer docker image
+        run: |
+        echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login \
+            -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin docker.io
+        docker build . --file ./dockerfiles/trainer.dockerfile \
+            --tag docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
+        docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
+
+
+    
+

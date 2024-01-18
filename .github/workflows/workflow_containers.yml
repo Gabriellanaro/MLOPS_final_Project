@@ -5,7 +5,7 @@ on:
     branches: [continuous_container]
 
 jobs:
-  build:
+  build_trainer:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,8 +18,7 @@ jobs:
               --tag docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
           docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
 
-jobs:
-  build:
+  build_predict:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,12 +27,11 @@ jobs:
         run: |
           echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login \
               -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin docker.io
-          docker build . --file dockerfiles/trainer.dockerfile \
+          docker build . --file dockerfiles/predict.dockerfile \
               --tag docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
           docker push docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
 
-jobs:
-  build:
+  build_service:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

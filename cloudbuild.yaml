@@ -1,8 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    if: false
     args: ['build', '-t', 'gcr.io/vernal-aleph-410709/main', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    if: false
     args: ['push', 'gcr.io/vernal-aleph-410709/main']
 

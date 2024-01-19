@@ -419,7 +419,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- question 21 fill here ---
+--- [this figure](reports/figures/figuresGroup9/build_history.jpg) ---
 
 ### Question 22
 

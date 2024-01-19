@@ -322,7 +322,7 @@ The results of the experiments are written by default in the directory `outputs`
 >
 > Answer:
 
---- Our code sets up a hyperparameter sweep using the Weights & Biases (W&B) library to optimize the training process of t5-small. As it can be seen in [this figure](figures/figuresGroup9/chartsWandb.jpg) and in [this figure](figures/figuresGroup9/chart2Wandb.jpg) we have made different experiments changing the `learning_rate, batch_size and weight_decay`. As well, [this figure](figures/figuresGroup9/chart3Wandb.jpg) shows which of the parameters has more impact on the model. In summary, this code automates the hyperparameter tuning process, leveraging W&B for experiment tracking and optimization, and utilizes the `Trainer` class for training a transformer-based model with varying hyperparameter configurations.---
+--- Our code sets up a hyperparameter sweep using the Weights & Biases (W&B) library to optimize the training process of t5-small. As it can be seen in ![this figure](figures/figuresGroup9/chartsWandb.jpg) and in ![this figure](figures/figuresGroup9/chart2Wandb.jpg) we have made different experiments changing the `learning_rate, batch_size and weight_decay`. As well, ![this figure](figures/figuresGroup9/chart3Wandb.jpg) shows which of the parameters has more impact on the model. In summary, this code automates the hyperparameter tuning process, leveraging W&B for experiment tracking and optimization, and utilizes the `Trainer` class for training a transformer-based model with varying hyperparameter configurations.---
 
 ### Question 15
 
@@ -401,7 +401,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- [this figure](reports/figures/figuresGroup9/data_bucket.png) ---
+--- ![this figure](reports/figures/figuresGroup9/data_bucket.png) ---
 
 ### Question 20
 
@@ -410,7 +410,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- [this figure](reports/figures/figuresGroup9/containerRegistry.jpg) ---
+--- ![this figure](reports/figures/figuresGroup9/containerRegistry.jpg) ---
 
 ### Question 21
 
@@ -419,7 +419,7 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- [this figure](reports/figures/figuresGroup9/build_history.jpg) ---
+--- ![this figure](reports/figures/figuresGroup9/build_history.jpg) ---
 
 ### Question 22
 
@@ -486,7 +486,7 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
---- [this figure](reports/figures/figuresGroup9/mlopsDiagram.png)
+--- ![this figure](reports/figures/figuresGroup9/mlopsDiagram.png)
 
 We should start looking at the diagram at our local PyTorch application, where we implemented the t5-small model from the Transformers framework. This framework formed the backbone of our project's initial stages, tracked through Git on GitHub.
 

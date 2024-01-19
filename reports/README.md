@@ -401,7 +401,8 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- ![this figure](reports/figures/figuresGroup9/data_bucket.png) ---
+--- 
+![this figure](reports/figures/figuresGroup9/data_bucket.png) ---
 
 ### Question 20
 
@@ -410,7 +411,8 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- ![this figure](reports/figures/figuresGroup9/containerRegistry.jpg) ---
+--- 
+![this figure](reports/figures/figuresGroup9/containerRegistry.jpg) ---
 
 ### Question 21
 
@@ -419,7 +421,8 @@ In the course of our tasks, we initially employed an e2-medium VM. Nevertheless,
 >
 > Answer:
 
---- ![this figure](reports/figures/figuresGroup9/build_history.jpg) ---
+--- 
+![this figure](reports/figures/figuresGroup9/build_history.jpg) ---
 
 ### Question 22
 
@@ -486,7 +489,8 @@ Then we deployed our model in the cloud. We started by building the image of the
 >
 > Answer:
 
---- ![this figure](reports/figures/figuresGroup9/mlopsDiagram.png)
+--- 
+![this figure](reports/figures/figuresGroup9/mlopsDiagram.png)
 
 We should start looking at the diagram at our local PyTorch application, where we implemented the t5-small model from the Transformers framework. This framework formed the backbone of our project's initial stages, tracked through Git on GitHub.
 
